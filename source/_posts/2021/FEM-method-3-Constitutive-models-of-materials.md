@@ -1,8 +1,10 @@
 ---
 title: 'FEM method 3: Constitutive models of materials'
 date: 2021-07-16 18:47:40
-tags: FEM, Reading Notes
-mathjax: True
+tags: 
+  - FEM
+  - Reading Notes
+cover: https://i.loli.net/2021/07/17/2AvtuwfSUBjd6O8.png
 katex: True
 ---
 

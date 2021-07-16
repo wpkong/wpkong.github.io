@@ -1,8 +1,10 @@
 ---
 title: 'FEM method 2: Elasticity in three dimensions'
 date: 2021-07-16 18:42:48
-tags: FEM, Reading Notes
-mathjax: True
+tags: 
+  - FEM
+  - Reading Notes
+cover: https://i.loli.net/2021/07/17/2AvtuwfSUBjd6O8.png
 katex: True
 ---
 

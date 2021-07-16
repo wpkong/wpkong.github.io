@@ -1,0 +1,7 @@
+bottom:
+    - class_name: visitor-map
+      id_name: visito-map
+      name: 访客地图
+      icon: fas fa-heartbeat
+      order:
+      html: '<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=zmqneyfZNqR5KxF8jWgYIW0mitw2sjzX7i8jU8kwiAE"></script>'
