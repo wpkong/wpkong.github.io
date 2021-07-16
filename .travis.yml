@@ -6,6 +6,9 @@ cache: npm
 branches:
   only:
     - source # build master branch only
+addons:
+  apt_packages:
+    - pandoc
 script:
   - hexo generate # generate static files
 deploy:
