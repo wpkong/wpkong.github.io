@@ -1,5 +1,5 @@
 ---
-title: 'FEM method: Constitutive models of materials'
+title: 'FEM method 3: Constitutive models of materials'
 date: 2021-07-16 18:47:40
 tags: FEM, Reading Notes
 mathjax: True

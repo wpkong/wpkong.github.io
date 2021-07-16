@@ -1,5 +1,5 @@
 ---
-title: 'FEM method: Elasticity in three dimensions'
+title: 'FEM method 2: Elasticity in three dimensions'
 date: 2021-07-16 18:42:48
 tags: FEM, Reading Notes
 mathjax: True
