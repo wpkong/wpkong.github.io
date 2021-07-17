@@ -67,8 +67,8 @@ $$
 
 定义上来说
 
-- $\vec f(\vec X)$ 是指单位未形变**体积(volume)**上的受力大小，合力大小 $\vec{f}_{\text {aggregate }}(A)=\int_{A} \vec{f}(\vec{X}) d \vec{X}, \space A \subset \Omega $
-- $\vec \tau(\vec X)$ 是指单位未形变**面积(area)**上的受力大小，合力大小为 $\vec{f}_{\text {aggregate }}(B)=\oint_{B} \vec{\tau}(\vec{X}) dS, \space B \subset \partial \Omega$
+- $\vec f(\vec X)$ 是指单位未形变**体积**(volume)上的受力大小，合力大小 $\vec{f}_{\text {aggregate }}(A)=\int_{A} \vec{f}(\vec{X}) d \vec{X}, \space A \subset \Omega $
+- $\vec \tau(\vec X)$ 是指单位未形变**面积**(area)上的受力大小，合力大小为 $\vec{f}_{\text {aggregate }}(B)=\oint_{B} \vec{\tau}(\vec{X}) dS, \space B \subset \partial \Omega$
 
 如何计算 force density 和 traction 呢，使用 **stress tensor** $P, P \in R^{3\times3}$ 就可以了，这里用的是 **First Piola-Kirchhoff stress tensor**
 
