@@ -67,7 +67,7 @@ $$
 
 定义上来说
 
-- $\vec f(\vec X)$ 是指单位未形变**体积**(volume)上的受力大小，合力大小 $\vec{f}_{\text {aggregate }}(A)=\int_{A} \vec{f}(\vec{X}) d \vec{X}, \space A \subset \Omega $
+- $\vec f(\vec X)$ 是指单位未形变**体积**(volume)上的受力大小，合力大小 $\vec{f}_{\text {aggregate }}(A)=\int_{A} \vec{f}(\vec{X}) d \vec{X}, \space A \subset \Omega$
 - $\vec \tau(\vec X)$ 是指单位未形变**面积**(area)上的受力大小，合力大小为 $\vec{f}_{\text {aggregate }}(B)=\oint_{B} \vec{\tau}(\vec{X}) dS, \space B \subset \partial \Omega$
 
 如何计算 force density 和 traction 呢，使用 **stress tensor** $P, P \in R^{3\times3}$ 就可以了，这里用的是 **First Piola-Kirchhoff stress tensor**
@@ -96,7 +96,7 @@ $\vec f(\vec X) = div_{\vec X} P(\vec X)$ 或者 $f_i = \sum_{j=1}^3 P_{ij,j} = 
 $$
 \delta \Psi(F) = \frac{\partial \Psi}{\partial \mathbf{F}}: \delta \mathbf{F}
 $$
-而势能为**“力 * 位移”**，注意，之前定义的force density $\vec f$ 是“**力的密度**”，而不是力本身，$\tau$ 同理。因此 $\vec f \times dV$才是力的大小。而对于一个点 $\vec x$ ，位移为 $\delta \vec \phi$ (变分定义)。基于此，应变能 $E$ 的变分可以看做是：
+而势能为“$力 \times 位移$”，注意，之前定义的force density $\vec f$ 是“**力的密度**”，而不是力本身，$\tau$ 同理。因此 $\vec f \times dV$才是力的大小。而对于一个点 $\vec x$ ，位移为 $\delta \vec \phi$ (变分定义)。基于此，应变能 $E$ 的变分可以看做是：
 $$
 \delta E=-\int_{\Omega} \vec{f}(\vec{X}) \cdot \delta \vec{\phi}(\vec{X}) d \vec{X}-\oint_{\partial \Omega} \vec{\tau}(\vec{X}) \cdot \delta \vec{\phi}(\vec{X}) d S
 $$
