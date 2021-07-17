@@ -8,13 +8,15 @@ cover: https://i.loli.net/2021/07/17/2AvtuwfSUBjd6O8.png
 katex: True
 ---
 
+## Terms
+
 $\Omega$ 描述了物体的体空间
 
 大写 $\vec X$ 描述了**形变前**(reference configutation)任意一点的位置。
 
 小写 $\vec x$ 描述**形变后**任意一点的位置
 
-$\phi$  (**Deformation function**)
+### $\phi$  (**Deformation function**)
 
  $ \vec x = \vec \phi(\vec X) $  描述位置X的形变
 
@@ -22,7 +24,7 @@ $\phi$  (**Deformation function**)
 
 
 
-$F$ (**Deformation gradient tensor**)
+### $F$ (**Deformation gradient tensor**)
 
 $F=\frac{\partial \vec \phi}{\partial \vec X} \in R^{3\times 3}$  可以记作 $F_{ij} = \phi_{i,j}$
 
@@ -32,7 +34,7 @@ $F=\frac{\partial \vec \phi}{\partial \vec X} \in R^{3\times 3}$  可以记作 $
 
 
 
-$E[\phi]$ (**Strain energy**, 应变能)
+### $E[\phi]$ (**Strain energy**, 应变能)
 
 形变物体上累计的势能
 
@@ -40,7 +42,7 @@ $E[\phi]$ (**Strain energy**, 应变能)
 
 
 
-$\Psi$ (**Energy density**)
+### $\Psi$ (**Energy density**)
 
 描述 $\vec X$ 周围微小体积上的能量，也即微元能量。
 
@@ -59,7 +61,7 @@ $$
 
 
 
-**Force density**  (内部力) 和 **Traction** (外部牵引力)
+### **Force density**  (内部力) 和 **Traction** (外部牵引力)
 
 内部力密度(force density)和边界牵引力(traction)需要分开算，因为边界力通常比内部力更强，物理角度来说，内部微元受到的力来自各个方向，就算很大也基本会被抵消，但是边界受力就一般来自内部一侧，通常无法抵消。
 
@@ -89,6 +91,8 @@ $\vec f(\vec X) = div_{\vec X} P(\vec X)$ 或者 $f_i = \sum_{j=1}^3 P_{ij,j} = 
 如上可以看到，借助First Piola-Kirchhoff stress tensor $P$，可以计算出traction和force density. 通常会提供两种超材料性质的描述形式：1. $\Psi$对$F$的函数；2.$P$对$F$的函数。
 
 
+
+## 证明
 
 上述描述的证明如下：
 
