@@ -48,7 +48,7 @@ $$
 
 
 
-### Linear elasticity
+## Linear elasticity
 
 如之前描述，$E$ 可以用上述线性描述的模型叫做 *Linear elasticity* ，其 *strain energy density* 可以描述为
 $$
@@ -88,3 +88,38 @@ $$
 1. $P$ 是 $F$ 的线性函数，计算成本很低，这也是叫做 *Linear Elasticity* 的原因
 2. 由于 $\epsilon$ 是在小型变的情况下定义的，所以只有在小型变时才适用线性弹性 *Linear elastic*
 
+
+
+## St. Venant-Kirchhoff model
+
+上述中由于把 *Green Strain Tensor* $E$ 用 *small strain tensor* $\epsilon$ 近似，那么顺理成章地在 *Linear Elasitcity* 中替换回来。也即 *St. Venant-Kirchhoff material*：
+$$
+\Psi(F) = \mu E:E + \frac \lambda 2 tr^2(E)
+$$
+由公式(1)可以先算出 $E$ 的变分：
+$$
+\delta \mathbf{E}=\frac{1}{2}\left(\delta \mathbf{F}^{T} \mathbf{F}+\mathbf{F}^{T} \delta \mathbf{F}\right)=\operatorname{Sym}\left\{\mathbf{F}^{T} \delta \mathbf{F}\right\}
+$$
+
+$$
+\mathbf{E}: \delta \mathbf{E}=\mathbf{E}:\left\{\mathbf{F}^{T} \delta \mathbf{F}\right\}=\{\mathbf{F} \mathbf{E}\}: \delta \mathbf{F} \\
+
+\operatorname{tr}(\delta \mathbf{E})=\mathbf{I}:\left\{\mathbf{F}^{T} \delta \mathbf{F}\right\}=\mathbf{F}: \delta \mathbf{F}
+$$
+
+
+> 注意上述公式中有个等式 $S:(A^TB) = (AS):B$，其中三个矩阵是任意的，不要求对称。可以通过求和形式展开，可以得到两边展开形式为
+> $$
+> \sum_i\sum_j\sum_k S_{i,j}A_{k,j}B_{k,j} = \sum_i\sum_j\sum_k S_{k,j}A_{i,k}B_{i,j}
+> $$
+
+
+
+然后带入 $\Psi$ 的变分：
+$$
+\delta \Psi=2 \mu \mathbf{E}: \delta \mathbf{E}+\lambda \operatorname{tr}(\mathbf{E}) \operatorname{tr}(\delta \mathbf{E})=\underbrace{\mathbf{F}[2 \mu \mathbf{E}+\lambda \operatorname{tr}(\mathbf{E}) \mathbf{I}]}_{=\partial \Psi / \partial \mathbf{F}}: \delta \mathbf{F} 
+$$
+因此
+$$
+\mathbf{P}(\mathbf{F})=\mathbf{F}[2 \mu \mathbf{E}+\lambda \operatorname{tr}(\mathbf{E}) \mathbf{I}]
+$$
