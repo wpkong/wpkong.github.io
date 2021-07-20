@@ -8,6 +8,12 @@ cover: https://i.loli.net/2021/07/17/2AvtuwfSUBjd6O8.png
 katex: True
 ---
 
+## Constitutive models
+
+**构成模型** (*Constitutive models*)，即对某一材料的物理特性的数学描述 
+
+
+
 ## strain measure
 
 形变梯度 $F$ 反映不够直观，因此采用一些例如应**变度量** (strain measures)或者不变量 (invariants) 等中间量来定量描述这种形变。通常这些中间量由 $F$ 计算得到，但相对全面地保留 $F$ 的特征。
@@ -54,7 +60,7 @@ $$
 $$
 \Psi(F) = \mu\epsilon:\epsilon + \frac \lambda 2 tr^2(\epsilon)
 $$
-其中 $\mu,\lambda$ 是 Lame coeddcients ，可以根据**杨氏模量 k**和**泊松比 **$\nu$计算
+其中 $\mu,\lambda$ 是 Lame coeddcients ，可以根据**杨氏模量** $k$ 和**泊松比** $\nu$ 计算
 
 - 杨氏模量 *Young’s modulus*: 伸缩性的度量
 - 泊松比 *Poisson’s ratio*: 不可压缩性的度量
@@ -123,3 +129,47 @@ $$
 $$
 \mathbf{P}(\mathbf{F})=\mathbf{F}[2 \mu \mathbf{E}+\lambda \operatorname{tr}(\mathbf{E}) \mathbf{I}]
 $$
+由此可以看到，$P$ 是 $F$ 的三阶多项式。而对比 *Linear elasticity* 中用 *small strain tensor* 代替 *Green strain tensor* 这种损失了旋转不变性的做法，由于 *Green strain tensor* 的旋转不变性， *St. Venant-Kirchhoff material* 也具有旋转不变性。
+
+但是这种模型一些问题，比方说在压缩一个物体的过程中，外力施加下会产生一个抵抗压缩的恢复力，这个恢复力随着外力增大而增大。在施加压力极大的情况下，物体一旦坍缩成 $0$ 体积，导致 $F = 0 \longrightarrow P = 0$ （体积为0）。如果再加大压力，会使得物体体积反转，导致反向扩大。**这和现实情况显然不符**，仿真的时候有可能会出现这种情况。这是由于高度的非线性复杂度，但是过于简单的话会导致如 *Linear elasticity* 这种构成模型中使得旋转不变性消失的情况。
+
+## Corotated linear elasticity
+
+这种构成模型试图结合简单性和足够的非线性，以保证旋转不变性（解决上述两个构成模型的缺陷）。
+
+首先使用极分解 $F = RS$ 构成一个新的应变度量 (*strain measure*)：
+$$
+\epsilon_c = S - I
+$$
+用这个应变度量替换公式(7)的 *small strain tensor*：
+$$
+\begin{aligned}
+\Psi(F)  &= \mu \epsilon_c:\epsilon_c + \frac \lambda 2 tr^2(\epsilon_c) \\
+&= \mu\|\mathbf{S}-\mathbf{I}\|_{F}^{2}+(\lambda / 2) \operatorname{tr}^{2}(\mathbf{S}-\mathbf{I})
+
+\end{aligned}
+$$
+
+>  之前公式(15)中用到了一个等式 $S:(A^TB) = (AS):B$ ，这里可以代换一下，我们知道 $A_F^2 = A:A$，那么：
+> $$
+> \begin{aligned}
+> 
+> \|S-I\|_F^2 &= (S-I):(S-I) \\
+> & = (S-I):(R^TR(S-I)) = (S-I):(R^T(F-R)) \\
+> &= (R(S-I)):(F-R) = (F-R):(F-R) = \\
+> &= \|F-R\|_F^2
+> 
+> \end{aligned}
+> $$
+> 
+
+可以得到：
+$$
+\Psi(\mathbf{F})=\mu\|\mathbf{F}-\mathbf{R}\|_{F}^{2}+(\lambda / 2) \operatorname{tr}^{2}\left(\mathbf{R}^{T} \mathbf{F}-\mathbf{I}\right) \\
+$$
+
+$$
+\Psi(\mathbf{F})=\mu\|\mathbf{\Sigma}-\mathbf{I}\|_{F}^{2}+(\lambda / 2) \operatorname{tr}^{2}(\boldsymbol{\Sigma}-\mathbf{I})
+$$
+
+
