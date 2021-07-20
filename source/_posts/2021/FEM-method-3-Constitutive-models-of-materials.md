@@ -163,13 +163,24 @@ $$
 > $$
 > 
 
-可以得到：
+也可以得到：
 $$
 \Psi(\mathbf{F})=\mu\|\mathbf{F}-\mathbf{R}\|_{F}^{2}+(\lambda / 2) \operatorname{tr}^{2}\left(\mathbf{R}^{T} \mathbf{F}-\mathbf{I}\right) \\
 $$
+因此用 *1st Piola-Kirchhoff stress tensor*， 对 $\Psi(F)$ 对 $F$ 求偏导得到 $P$： 
+$$
+\begin{aligned}
+\mathbf{P}(\mathbf{F}) &=\mathbf{R}\left[2 \mu \boldsymbol{\epsilon}_{\mathrm{c}}+\lambda \operatorname{tr}\left(\boldsymbol{\epsilon}_{\mathrm{c}}\right) \mathbf{I}\right]=\mathbf{R}[2 \mu(\mathbf{S}-\mathbf{I})+\lambda \operatorname{tr}(\mathbf{S}-\mathbf{I}) \mathbf{I}] \\
+&=2 \mu(\mathbf{F}-\mathbf{R})+\lambda \operatorname{tr}\left(\mathbf{R}^{T} \mathbf{F}-\mathbf{I}\right) \mathbf{R}
+\end{aligned}
+$$
+这种模型由于采用了极分解，并且R处处不一样，导致其复杂度较高。
 
-$$
-\Psi(\mathbf{F})=\mu\|\mathbf{\Sigma}-\mathbf{I}\|_{F}^{2}+(\lambda / 2) \operatorname{tr}^{2}(\boldsymbol{\Sigma}-\mathbf{I})
-$$
+
+
+## Isotropic materials and invariants
+
+
+
 
 
